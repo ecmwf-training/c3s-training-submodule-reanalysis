@@ -2,7 +2,7 @@
 # Learn more at https://jupyterbook.org/customize/toc.html
 
 format: jb-book
-root: intro-jupyter-template
+root: intro
 chapters:
 - file: jupyter-notebook-template
 
