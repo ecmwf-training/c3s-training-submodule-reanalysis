@@ -1,11 +1,6 @@
 ![logo](https://climate.copernicus.eu/sites/default/files/custom-uploads/branding/LogoLine_horizon_EC_Cop_ECMWF.png)
 
-# C3S Reanalysis Tutorial
-
-**PLEASE NOTE THAT THIS A DEVELOPMENT INSTANCE, THESE NOTE BOOKS ARE OFFICIALLY PUBLISHED ELSEWHERE**
-
-This Jupyter book is a sub-module of the core C3S training material, it is published here for reviewing the
-content prior to publication.
+# C3S reanalysis tutorial
 
 Reanalysis datasets provide comprehensive, gridded meteorological information spanning multiple decades, offering valuable insights into past weather and climate conditions. This tutorial series delves into the utilization of reanalysis data for various meteorological analyses.
 
@@ -24,7 +19,7 @@ The tutorial comprises the following steps:
 ![logo](./img/climatology_banner.png)
 
 
-## Heatwave Analysis
+## Heatwave analysis
 
 In September 2020, a record-breaking heatwave occured in large parts of western Europe, ([see a description here](https://climate.copernicus.eu/september-brings-record-breaking-warm-temperatures-and-low-sea-ice)). The city of Lille in northern France for example experienced its hottest day in September 2020 since records began in 1945. In this tutorial we will analyse this event with data from the Climate Data Store (CDS) of the Copernicus Climate Change Service (C3S).
 
@@ -37,7 +32,7 @@ The tutorial comprises the following steps:
 ![logo](./img/Temp_records_banner.png))
 
 
-## Temperature Record
+## Temperature record
 
 In this tutorial we will access data from the Climate Data Store (CDS) of the Copernicus Climate Change Service (C3S), and analyse air and sea surface temperatures comparing July 2023 record breaking values with climatologies. 
 
