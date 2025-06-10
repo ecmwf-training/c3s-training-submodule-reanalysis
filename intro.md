@@ -4,9 +4,9 @@
 
 Reanalysis datasets provide comprehensive, gridded meteorological information spanning multiple decades, offering valuable insights into past weather and climate conditions. This tutorial series delves into the utilization of reanalysis data for various meteorological analyses.
 
-Reanalysis datasets are a powerful fusion of historical observations and system models, producing a consistent, gridded representation of selected Earth’s systems over time. They allow us to reconstruct past climate and environmental conditions—even in places or periods where direct measurements were sparse or missing. This tutorial series delves into how reanalysed temperature data can be used for a wide range of applications, from generating a climate trend analysis, and identifying the magnitude of anomalies and extreme events deviating from climate norms. Whether you are atmospheric dynamics or validating climate models, reanalysis datasets offer key insights into the characteristics of Earth’s systems over time, and how present day events compare. The skills gained in the following tutorials can readily be applied elsewhere, to other datasets and systems, equipping you to deepen your understanding of the planet’s systems. 
+Reanalysis datasets are a powerful fusion of historical observations and system models, producing a consistent, gridded representation of selected Earth’s systems over time. They allow us to reconstruct past climate and environmental conditions—even in places or periods where direct measurements were sparse or missing. This tutorial series delves into how reanalysed temperature data can be used for a wide range of applications, from generating a climate trend analysis, and identifying the magnitude of anomalies and extreme events deviating from climate norms. Whether you are studying atmospheric dynamics or validating climate models, reanalysis datasets offer key insights into the characteristics of Earth’s systems over time, and how present day events compare. The skills gained in the following tutorials can readily be applied elsewhere, to other datasets and systems, equipping you to deepen your understanding of the planet’s systems. 
 
-Here, you can find tutorials on the following aspects of data Reanalysis:
+Here, you can find tutorials on the following aspects of data reanalysis:
 
 
 ## 1. Climatology
@@ -30,5 +30,5 @@ In this tutorial you will access data from the Climate Data Store (CDS) of the C
 ![logo](img/reanalysis-temp-record-000.png)
 
 
-Together, these tutorials equip you to navigate, analyse, and interpret reanalysis data with confidence, enabling you to unlock deeper insights into past and present of Earth’s Climate-relevant systems, and enhance your set of essential skills for climate science and environmental research.
+Together, these tutorials equip you to navigate, analyse, and interpret reanalysis data with confidence, enabling you to unlock deeper insights into past and present of Earth’s climate-relevant systems, and enhance your set of essential skills for climate science and environmental research.
    
