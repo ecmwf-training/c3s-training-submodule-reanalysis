@@ -1,4 +1,4 @@
-![logo](https://climate.copernicus.eu/sites/default/files/custom-uploads/branding/LogoLine_horizon_EC_Cop_ECMWF.png)
+![logo](https://climate.copernicus.eu/sites/default/files/2025-03/logoline_c3s.png)
 
 # Tutorials on C3S reanalysis datasets
 
