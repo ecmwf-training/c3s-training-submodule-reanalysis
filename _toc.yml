@@ -14,3 +14,5 @@ chapters:
     title: CARRA and ERA5 comparison
   - file: reanalysis-carra-era5-tp
     title: CARRA and ERA5 precipitation comparison
+  - file: cerra-ciaran
+    title: CERRA and CIARAN comparison
