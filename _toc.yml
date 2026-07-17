@@ -16,3 +16,4 @@ chapters:
     title: CARRA and ERA5 precipitation comparison
   - file: cerra-ciaran
     title: CERRA and CIARAN comparison
+  - file: reanalysis-carra2-siconc.ipynb
