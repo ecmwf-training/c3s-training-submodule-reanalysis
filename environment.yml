@@ -5,4 +5,5 @@ dependencies:
   - xarray
   - matplotlib
   - cartopy
+  - xesmf
   - jupyterlab-myst

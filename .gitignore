@@ -173,3 +173,5 @@ data_dir/
 
 # Local QA tools clone (see Makefile / make qa-install)
 .qa-tools/
+# MyST build outputs
+_build

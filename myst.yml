@@ -1,0 +1,40 @@
+version: 1
+project:
+  title: Jupyterbook template
+  authors:
+    - name: The Copernicus Climate Change Service (C3S)
+    - name: entrusted to ECMWF (European Centre for Medium-Range Weather Forecasts)
+  exclude:
+    - developer/*
+  github: ecmwf-training/c3s-training-submodule-reanalysis
+  thebe:
+    binder:
+      repo: ecmwf-training/c3s-training-submodule-reanalysis
+      provider: github
+      url: https://mybinder.org
+      ref: develop
+  exports:
+    - format: pdf
+      template: plain_latex_book
+      output: exports/book.pdf
+  toc:
+    - file: intro.md
+    - file: reanalysis-climatology.ipynb
+      title: Climatology
+    - file: reanalysis-heatwave.ipynb
+      title: Heatwave Analysis
+    - file: reanalysis-temp-record.ipynb
+      title: Temperature Record
+    - file: reanalysis-carra-era5-t2m.ipynb
+      title: CARRA and ERA5 comparison
+    - file: reanalysis-carra-era5-tp.ipynb
+      title: CARRA and ERA5 precipitation comparison
+    - file: cerra-ciaran.ipynb
+      title: CERRA and CIARAN comparison
+    - file: reanalysis-carra2-siconc.ipynb
+    - file: reanalysis-carra2-subdomain.ipynb
+    - file: reanalysis-carra2-temperature-forecast.ipynb
+site:
+  options:
+    folders: true
+  template: book-theme
