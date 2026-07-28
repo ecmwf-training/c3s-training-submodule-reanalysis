@@ -1,0 +1,25 @@
+# Globally disable specific checks
+# disabled_checks:
+#   - linter
+#   - formatter
+
+# # Notebooks to skip entirely (all checks), supports glob patterns
+# skip_notebooks:
+#   - "./template-notebook.ipynb"
+
+# Per-notebook check configuration
+notebooks:
+  "./template-notebook.ipynb":
+    skip:
+      - metadata
+      - pynblint
+
+# Test configuration
+require_tests: false     # Set true to fail when no test files exist
+coverage_threshold: 80   # Minimum coverage percentage for pytest-cov
+
+# Pynblint rule configuration
+# pynblint:
+#   exclude:                    # Additional rules to suppress (extends baseline)
+#     - untitled-notebook
+#   exclude_mode: extend        # "extend" (default) or "override"

@@ -1,96 +1,162 @@
-# ECMWF Jupyter based learning resource templates
-This repository contains guides to facilitate development and maintenance of ECMWF Jupyter based learning resources. It includes the following templates:
+# ECMWF JupyterBook sub-module template
 
-- A template repository, which hosts notebooks, or a collection of similar notebooks
-- A template Jupyter notebook based learning resource, such as a tutorial, example workflow, or similar.
-- A template Jupyterbook landing page to access and render one or more Jupyter notebooks
+This repository is a GitHub **template** for creating and maintaining a submodule that
+can be used in ECMWF Jupyter Books for learning and documentation resources.
 
-## Template repository
+*Please replace the above text with a description of the sub-module*
 
-This repository is itself a Github template. A new repository can be created from this by simply selecting the green `Use this template` icon on the top right. Create a repository from this template for Jupyter notebooks you plan to develop training purposes at ECMWF.
+## For contributors
 
-The default branch for this repository is **develop**, and this branch is used to deploy the review/development version of the JupyterBook. The **main** branch is reserved for published content and will be maintained by ECMWF.
+It is expected that external contributions are provided as pull requests
+from forked repositories, as documented more thoroughly in the
+[codex guidelines](https://github.com/ecmwf/codex/blob/main/Guidelines/External-Contributions.md).
 
-The repository includes github-actions which will automatically build a develop version of the Jupyter Book that can be used for review purposes.
+### Forking this repository
 
-## Template Jupyter notebook
+When creating a fork of this repository there are several additional steps
+you should take to ensure that things work as expected.
+1. **Activate the github actions**
+    - Navigate to the "Actions" tab at the top of the github webpage and click the button to enable actions.
+2. **Set the github pages to build from github Actions**
+    - Navigate to the "Settings", then to "Pages" in the left hand panel. In the "Build and deployment" section, use the dropdown and select "GitHubActions"
+3. **Add a valid CDS API key to the secrets** (*Optional, required if downloading data from the CDS*)
+    - Navigate to the "Settings", then to "Secrets and variables" -> "Actions" in the left hand panel. Click the "New repository secret" button and add a new secret with the Name: `CDSAPI_KEY`. The value of the Secret should be set to your CDS API key which you can find on [your profile page in the CDS](https://cds.climate.copernicus.eu/profile).
 
-This repository contains a [Jupyter notebook template](https://github.com/ecmwf-training/jupyter-template/blob/develop/jupyter-notebook-template.ipynb), which provides a suggested structure for Jupyter based ECMWF learning resources. It also includes metadata to be applied at the notebook level and at the cell level according to a metadata-schema described here: https://github.com/ecmwf-training/jn-metadata-schema.
+### Adding notebooks and markdown content
 
-### Best practices for Jupyter notebooks
-
-#### Keep notebooks short
-Focus on one topic / visualisation / processing routine. Consider separate notebooks if multiple parts or topics are included.
-
-#### Keep headings consistent
-- Keep headings in separate cells
-- Use # for first level headings, ## for second level, and so on. Do not skip a level (e.g. do not follow a 1st level heading with a third level, without a second level in between).
-
-#### Make use of MyST markdown
-Use coloured cells, icons, etc. where needed.
-
-#### Use of images
-Any images unique to the Jupyter notebook should be stored in the ./img folder in this repository. Any images needed across multiple notebooks in multiple repositories (such as logolines) should be sourced from an external URL (see for example links to ECMWF and Copernicus logos here https://climate.copernicus.eu/branding-guidelines#Logolines). Images not already online can be uploaded to a dedicated repository for training hosted at https://sites.ecmwf.int/training/ (please contact chris.stewart@ecmwf.int).
-
-### Use of data
-Data files should not be stored in the Github repository, but hosted externally and linked to, or downloaded from original source (e.g. CDS/ADS).
-
-
-## Jupyterbook Build instructions
-
-Notebook providers are responsible for ensuring that the github actions succesfully build and deploy the
-JupyterBook. It is advisable to test run the build commands and inspect the output locally before pushing
-to the repository as this will save you time and effort.
-
-### Building the JupyterBook locally
-
-The following instructions are for Linux and MacOS users.
-
-It is recommended that you test the build locally prior to creating your pull request to develop,
-this will address many of the minor issues you may face and provide you with more readable output.
-To ensure that you have the same software installed required to build the JupyterBook,
-and that you are not using any unsupported software packages during a local build, it is recommended
-that you create an conda-forge environment for building Jupyter Books:
-
+If creating a notebook please use the [Template notebook](./template-notebook) to ensure you
+are following the expected guidelines.
+Markdown content should follow a similar structure as this README.md file.
+To make the added content appear in the Jupyter Book rendered pages, you must add the content to the
+table of contents (`toc`) in the `myst.yml` file, e.g.:
+```yml
+  toc:
+    ...
+    - my-new-notebook.ipynb
+    - my-new-markdown.md
 ```
-conda create -y -n JUPYTER-BUILD -c conda-forge python=3.12
-conda activate JUPYTER-BUILD
-pip install jupyter-book
-```
+Feel free to remove any of the template/placeholder content that is currently listed.
 
-With your JUPYTER-BUILD environment activated the following line will build the jupyterbook locally:
+### Branch architecture
 
-```
-rm -rf _build
-jupyter-book build --all .
-```
+This template has been designed to be used as a sub-module for a parent repository.
+Therefore the default branch for this repository is **develop**, and this branch is used to
+deploy the review/development version of the JupyterBook.
+The **main** branch is reserved for published content and will be maintained by ECMWF.
 
-This will create all the html files used to create the JupyterBook in the untracked `_build/` folder.
-You can open the homepage of this local build with:
+The repository includes github-actions which will automatically build a develop version of
+the Jupyter Book that can be used for review purposes.
 
-```
-open _build/html/index.html
-```
+### GitHub Actions
 
-
-### GitHub actions
+:::{note}
+This template is designed to be used as a sub-module for a parent repository.
+The JupyterBook build here is intended for review and testing purposes, and hence
+the actions are associated to the develop branch.
+:::
 
 There are two github actions in place for this repository:
 
-The **`Build`** action builds the JupyterBook using the same proceedure as local build described below.
-It is activated when a pull request to the `develop` branch is opened, or when any change is made to the 
-develop branch (e.g. after merging a pull request). A pull request can only be merged
-into the develop branch if the `Build` action is successful.
+#### Jupyter Book Deploy
 
+The **`Jupyter Book Deploy`** action builds the Jupyter Book using the same procedure as
+local build described below then, if action is running on the `develop` branch, the build
+is deployed to github pages.
+The action is activated or when a change is made to the `develop` branch
+(e.g. after merging a pull request) or when a pull request to the `develop` branch is opened.
+It can also be triggered manually from the Actions tab in the github page.
 
-The **`Deploy`** action deploys the build JupyterBook to the github pages associated with this repository.
-This action is activated when a change is made to the develop branch, after the build action.
+#### Notebook QA
 
+The **`Notebook QA`** action runs a series of Quality Assessment checks on the notebooks in
+the repository. For example the code must meet acceptable coding standards and the notebooks
+must run to completion. This check is considered as part of the review process when accepting
+new notebooks to the repository.
 
-## Troubleshooting notes
+### Build and check the Jupyter Book locally
 
-1. Multiple Level 1 Headers (#) in a notebook seems to break the _toc definition of title. It is also bad practice so discourage.
-2. JupyterBooks do not have a running python kernel, threrefore they are not compatible with interactive widgets which require a running kernel, e.g. a number of ipywidgets, as documented here: https://jupyterbook.org/en/stable/interactive/interactive.html?highlight=widgets#ipywidgets
-3. Any additional images included in the notebook should be added using markdown hyperlink syntax, html syntax does not work with our jupyter-books. e.g.: `![](.images.png)`
-4. Please avoid using placeholder hyperlinks using (the HTML <a> tag without a href provided) and within notebook cross-references (links between sections of the notebook). Due to platform differences they are not rendered correctly on JupyterBook pages and causes many compilation warnings and errors. This means it is much harder for us to identify real issues in the notebook, slowing down the integration process.
-5. Please refrain from using HTML tags in general as they often intefere with the HTML config that JupyterBook builds and do not necessarily produce the intended effect when deployed in different environments. Markdown should offer all the text formatting required for the purposes of these traning notebooks.
+The following instructions assume you have cloned the repository and are in the top-level directory of the repository.
+
+#### Create environment and install dependancies for building the Jupyter Book
+
+Create a clean environment using the package manager of your preference,
+and install the CI dependencies.
+Below are examples for working with `conda` and `uv` package managers.
+
+**conda**:
+```sh
+# Create a conda environment, this only needs to be executed the once.
+conda create -y -n jupyter-build -c conda-forge python=3.12
+
+# To activate the conda environment.
+conda activate jupyter-build
+
+# Install the depdencies used by jupyterbook build to run the notebooks (specified in requirements.txt)
+make conda-env-update
+```
+
+**uv**:
+```sh
+# Create and activate a uv virtual environment.
+uv venv .venv --python 3.12
+
+# To activate the uv environment
+source .venv/bin/activate 
+
+# Install the depdencies used by jupyterbook build and to run the notebooks (specified in requirements.txt)
+make uv-env-update
+```
+
+#### Build and render the book locally
+
+```sh
+make jupyter-book
+```
+
+You will then be provided with a `localhost` link to view your notebook.
+
+:::{note}
+If you have multiple instances of Jupyter Book running on your computer,
+the actions may fail as they are not able find an available port to host the
+Jupyter Book.
+:::
+
+#### Run the Notebook QA checks
+
+To run the quality assurance checks, run the following command:
+
+```
+make qa
+```
+
+:::{note}
+The `make qa` command will clone a git repository to a hidden directory (.qa-tools)
+and install the dependancies required to execute all the quality assurance checks.
+It is recommended that you do this in a virtual environment.
+:::
+
+### Syncing core components from the template
+
+This repository was created from [`jupyterbook-submodule-template`](https://github.com/ecmwf-training/jupyterbook-submodule-template).
+Updates to the template's core components (`.github/`, `Makefile`, `setup.cfg`, `README.md`)
+can be pulled into your repository at any time:
+
+```sh
+make template-update
+```
+
+This adds the template as a git remote named `template`, fetches the `main` branch, and checks
+out the core files into your working tree. **No commit is made automatically** — all changes
+are left unstaged so you can review them before deciding what to keep.
+
+:::{important}
+Local changes to the synced files will **not** be preserved automatically.
+Before running `make template-update`, note any customisations you have made to
+`.github/`, `Makefile`, or `setup.cfg`. After the sync, use `git diff HEAD` to
+review what changed and manually reapply any local modifications before committing.
+
+The file `.github/notebook-qa.yml` is included in the `.github/` directory and will
+also be overwritten. If you have customised pynblint rules or disabled checks in that
+file, back up your changes before syncing.
+:::
+

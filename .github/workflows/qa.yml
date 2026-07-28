@@ -1,0 +1,25 @@
+
+name: Notebook QA
+
+on:
+  push:
+    branches:
+      - develop
+  pull_request:
+    branches:
+      - develop
+  workflow_dispatch:
+    inputs:
+      notebooks:
+        description: "Space-separated list of notebook paths to check (default: all *.ipynb)"
+        required: false
+        type: string
+        default: ""
+
+jobs:
+  notebook-qa:
+    uses: ecmwf-training/reusable-workflows/.github/workflows/notebook-qa.yml@main
+    with:
+      notebooks: ${{ inputs.notebooks || '' }}
+    secrets:
+      CDSAPI_KEY: ${{ secrets.CDSAPI_KEY }}
