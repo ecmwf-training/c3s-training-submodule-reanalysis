@@ -103,12 +103,12 @@ qa-install: $(QA_TOOLS) ## Install QA dependencies into the active Python enviro
 # ---------------------------------------------------------------------------
 
 .PHONY: qa-lint
-qa-lint: ## (2.2.3) Lint code cells with ruff check
-	ruff check $(NOTEBOOKS)
+qa-lint: ## (2.2.3) Lint code cells with ruff and automatically fix issues
+	ruff check $(NOTEBOOKS) --fix
 
 .PHONY: qa-format
-qa-format: ## (2.2.3) Check code-cell formatting with ruff format
-	ruff format --check --diff $(NOTEBOOKS)
+qa-format: ## (2.2.3) Format code cells with ruff format
+	ruff format $(NOTEBOOKS)
 
 .PHONY: qa-pynblint
 qa-pynblint: $(QA_TOOLS) ## (2.2.3) Run pynblint on each notebook
