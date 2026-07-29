@@ -5,4 +5,8 @@ dependencies:
   - xarray
   - matplotlib
   - cartopy
+  - cfgrib
   - jupyterlab-myst
+  - pip
+  - pip:
+    - earthkit~=1.0
