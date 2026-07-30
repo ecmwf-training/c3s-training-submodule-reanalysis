@@ -6,4 +6,8 @@ dependencies:
   - matplotlib
   - cartopy
   - xesmf
+  - cfgrib
   - jupyterlab-myst
+  - pip
+  - pip:
+    - earthkit~=1.0

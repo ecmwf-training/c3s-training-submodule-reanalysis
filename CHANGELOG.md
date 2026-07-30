@@ -1,0 +1,1 @@
+2026-07-29 - Added automatic checks, and updated notebooks to pass checks
