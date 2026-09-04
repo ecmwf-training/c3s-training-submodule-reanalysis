@@ -31,8 +31,8 @@ project:
       title: CARRA and ERA5 precipitation comparison
     - file: cerra-ciaran.ipynb
       title: CERRA and CIARAN comparison
-    - file: reanalysis-carra2-siconc.ipynb
-    - file: reanalysis-carra2-subdomain.ipynb
+    - file: reanalysis-carra2-seaice.ipynb
+      title: CARRA2 sea ice area fraction
     - file: reanalysis-carra2-temperature-forecast.ipynb
 site:
   options:
