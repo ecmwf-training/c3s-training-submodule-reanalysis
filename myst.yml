@@ -37,4 +37,6 @@ project:
 site:
   options:
     folders: true
+    style: ./_static/custom.css
+    announcement: 'This is a <strong>review instance</strong> of the training material. For the published material please visit <a href="https://ecmwf-training.github.io/c3s-training">ecmwf-training.github.io/c3s-training</a>.'
   template: book-theme

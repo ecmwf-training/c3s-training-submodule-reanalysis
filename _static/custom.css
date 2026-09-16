@@ -1,0 +1,145 @@
+/* MINIMAL FIX: Hide only the MyST frontmatter title block duplicate */
+.myst-fm-block-title {
+  display: none !important;
+}
+
+/* Add spacing after logo images and around H1 headers for better visual separation */
+article img,
+main img,
+.content img {
+    margin-bottom: 30px;
+}
+
+article h1,
+main h1,
+.content h1 {
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+/* Only hide heading-text spans in sidebar/header (not in main content) */
+.sidebar .heading-text,
+aside .heading-text,
+nav .heading-text,
+header .heading-text {
+    display: none !important;
+}
+
+/* Font definitions to match Jupyter Book v1 (PyData Sphinx Theme) */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    font-weight: 600;
+    line-height: 1.25;
+}
+
+/* Ensure emojis stay inline with text in navigation */
+nav a, nav span, nav li, .toc a, .toc span, .toc li {
+    white-space: nowrap !important;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Prevent line breaks in sidebar navigation */
+aside nav a, aside nav li {
+    white-space: nowrap !important;
+}
+
+/* General emoji inline styling */
+.emoji {
+    display: inline !important;
+    vertical-align: baseline;
+}
+
+/* Card grid styling - 2 cards per row like Jupyter Book v1 */
+.grid,
+.card-grid,
+article .grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 20px !important;
+    max-width: 100% !important;
+}
+
+/* Card styling to match Jupyter Book v1 */
+.card,
+.grid .card {
+    text-align: center !important;
+    display: flex !important;
+    flex-direction: column !important;
+    padding: 20px !important;
+}
+
+/* Card title styling - center and ensure Tutorial is on separate line */
+.card-title,
+.card h3,
+.card .card-header {
+    text-align: center !important;
+    display: block !important;
+    width: 100% !important;
+}
+
+/* Card body/text styling - center alignment */
+.card-body,
+.card-text,
+.card p {
+    text-align: center !important;
+}
+
+/* Ensure badge/label appears on separate line */
+.card .badge,
+.card .label {
+    display: block !important;
+    margin-top: 5px !important;
+}
+
+/* Add a horizontal rule above all level 2 headers */
+h2 {
+    position: relative;
+    margin-top: 40px; /* Space above the header */
+    padding-top: 10px;
+}
+
+h2::before {
+    content: "";
+    display: block;
+    width: 90%;
+    border-top: 1px solid #e8e8e8; /* Horizontal rule */
+    margin-bottom: 10px; /* Space between rule and header */
+}
+
+/* Style the horizontal rule */
+hr {
+    border: none;         /* Remove default border */
+    height: 1px;          /* Set thickness */
+    background-color: #e8e8e8; /* Change color */
+    margin: 20px 0;       /* Adjust spacing */
+    width: 90%;           /* Set width */
+    border-radius: 1px;   /* Optional: Rounded edges */
+}
+
+/* Hide the default MyST footer */
+footer.myst-footer,
+.article-footer,
+.content-footer {
+    display: none !important;
+}
+
+/* Custom footer with copyright information */
+body::after {
+    content: "By the Copernicus Climate Change Service (C3S), entrusted to ECMWF (European Centre for Medium-Range Weather Forecasts)\A\A© Copyright 2025.";
+    white-space: pre-wrap;
+    display: block;
+    text-align: center;
+    padding: 40px 20px 20px;
+    margin-top: 60px;
+    border-top: 1px solid #e8e8e8;
+    font-size: 14px;
+    color: #666;
+    line-height: 1.6;
+}
