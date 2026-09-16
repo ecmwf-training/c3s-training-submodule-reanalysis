@@ -1,6 +1,6 @@
 version: 1
 project:
-  title: Jupyterbook template
+  title: Review instance for the Reanalysis Training Material
   authors:
     - name: The Copernicus Climate Change Service (C3S)
     - name: entrusted to ECMWF (European Centre for Medium-Range Weather Forecasts)

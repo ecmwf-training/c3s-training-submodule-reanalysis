@@ -132,7 +132,7 @@ footer.myst-footer,
 
 /* Custom footer with copyright information */
 body::after {
-    content: "By the Copernicus Climate Change Service (C3S), entrusted to ECMWF (European Centre for Medium-Range Weather Forecasts)\A\A© Copyright 2025.";
+    content: "This is a review instance of the training material. For the published material please visit https://ecmwf-training.github.io/c3s-training.";
     white-space: pre-wrap;
     display: block;
     text-align: center;
