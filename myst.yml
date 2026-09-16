@@ -29,7 +29,7 @@ project:
       title: CARRA and ERA5 comparison
     - file: reanalysis-carra-era5-tp.ipynb
       title: CARRA and ERA5 precipitation comparison
-    - file: cerra-ciaran.ipynb
+    - file: reanalysis-cerra-ciaran.ipynb
       title: CERRA and CIARAN comparison
     - file: reanalysis-carra2-siconc.ipynb
     - file: reanalysis-carra2-subdomain.ipynb
