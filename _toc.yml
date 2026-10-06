@@ -10,4 +10,6 @@ chapters:
     title: Heatwave Analysis
   - file: reanalysis-temp-record
     title: Temperature Record
+  - file: reanalysis-carra-era5-t2m
+    title: CARRA and ERA5 Comparison
 
